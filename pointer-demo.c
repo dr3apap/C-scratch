@@ -1,6 +1,8 @@
 #include <stdio.h>
 #include <stdint.h>
 
+int next_alpha(uint8_t* c);
+
 int main(void)
 {
     uint8_t a_char = 'z';
@@ -19,4 +21,45 @@ int main(void)
     // Read from a_char
     printf("The value of a_char is: %c\n", a_char); 
 
+    uint8_t c = 'a';
+    printf("current alphabet is : %c\n", c);
+
+    // Address of expression argument
+    next_alpha(&c);
+    printf("Next alphabet is : %c\n", c);
+
+    // Pointer argument
+    uint8_t* c_pointer = &c;
+    next_alpha(c_pointer);
+    printf("Next alphabet is : %c\n", c);
+
+    // Alphabet in lower case
+    uint8_t first_letter = 'a';
+   for (int i = 0; i <= 24; i++){
+       if (first_letter == 'a') 
+           printf("%c", first_letter);
+       next_alpha(&first_letter);
+       printf("%c", first_letter);
+   }
+   printf("\n");
+
+   // Alphabet in upper case
+    uint8_t first_upper = 'A';
+   for (int i = 0; i <= 24; i++){
+       if (first_upper == 'A')
+           printf("%c", first_upper);
+       next_alpha(&first_upper);
+       printf("%c", first_upper);
+   }
+   printf("\n");
+
+   return 0;
 }
+
+
+int next_alpha(uint8_t* c)
+{
+    *c = (*c) + 1;
+   return 0;
+}
+
