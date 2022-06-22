@@ -35,7 +35,7 @@ int main(void)
 
     // Alphabet in lower case
     uint8_t first_letter = 'a';
-   for (int i = 0; i <= 24; i++){
+    for (int i = 0; i <= 24; i++){
        if (first_letter == 'a') 
            printf("%c", first_letter);
        next_alpha(&first_letter);
